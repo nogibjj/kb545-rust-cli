@@ -1,4 +1,4 @@
-name: Clippy
+name: Command Line
 
 on: [push, pull_request]
 
@@ -14,7 +14,10 @@ jobs:
           profile: minimal
           components: clippy, rustfmt
           override: true
-      - name: Run clippy
+      - name: Run Tests
+        run: make test
+      - name: Run Format
+        run: make format
+      - name: Run Lint
         run: make lint
   
-
